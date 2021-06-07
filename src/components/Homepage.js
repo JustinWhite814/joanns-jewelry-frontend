@@ -1,15 +1,17 @@
 import React from 'react';
 import Rings from './Rings'
-import Bracelets from './Bracelet'
 import Chains from './Chains'
 import Earrings from './Earrings'
-function Sidebar(props) {
+import Bracelets from './Bracelet'
+function homepage(props) {
   return (
     <div>
-      
-      sidebar
+      <Rings />
+      <Chains />
+      <Earrings />
+      <Bracelets />
     </div>
   );
 }
 
-export default Sidebar;
+export default homepage;
