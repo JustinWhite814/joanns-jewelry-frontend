@@ -1,15 +1,16 @@
 import React from 'react';
-import Rings from './Rings'
-import Chains from './Chains'
-import Earrings from './Earrings'
-import Bracelets from './Bracelet'
+import { Link, Redirect } from 'react-router-dom'
 function homepage(props) {
   return (
     <div>
-      <Rings />
-      <Chains />
-      <Earrings />
-      <Bracelets />
+      <Link to={'/rings'} ><button>rings</button></Link>
+      <br />
+      <Link to={'/chains'}><button>chains</button></Link>
+      <br />
+      <Link to={'/earrings'}><button>earrings</button></Link>
+      <br />
+      <Link to={'/bracelets'}><button>bracelets</button></Link>
+      <br />
     </div>
   );
 }

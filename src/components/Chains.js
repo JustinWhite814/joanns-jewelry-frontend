@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Context } from './Context';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from 'axios';
 
 function Chains(props) {

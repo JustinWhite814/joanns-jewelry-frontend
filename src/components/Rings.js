@@ -1,11 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Context } from './Context';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from 'axios';
 
 
 function Rings(props) {
-  const {user, jewels, baseURL} = useContext(Context)
+  const {baseURL} = useContext(Context)
   const [rings, setRings] = useState([])
   const getRings = async () => {
   const url = `${baseURL}/rings`
