@@ -18,6 +18,7 @@ function App() {
   const [admin, setAdmin] = useState({})
   const [jewels, setJewels] = useState([])
   const [loggedIn, setLoggedIn] = useState(false)
+  const [data, setData] = useState('')
   const getJewels = async () => {
     await axios.get(baseURL)
     .then(res => {
@@ -29,11 +30,21 @@ function App() {
     })
   }
   useEffect(()=> {getJewels()},[])
+  
+  async function getUser (e) {
+    await axios({
+    method: 'GET',
+    withCredentials: true,
+    url: "http://localhost:4000/user"
+    })
+    .then((res)=> setData(res.data))
+  }
+  
   return (
     <div className="App">
      
       <Switch>
-      <Context.Provider value={{baseURL, user, setUser, jewels, setJewels, getJewels, loggedIn, setLoggedIn}}>
+      <Context.Provider value={{data,baseURL, user, setUser, jewels, setJewels, getJewels, loggedIn, setLoggedIn, getUser}}>
       <Route exact path = '/' component={Landing}/>
       <Route exact path = '/sidebar' component={SideBar}/>
       <Route exact path ='/homepage' component={Homepage} />
