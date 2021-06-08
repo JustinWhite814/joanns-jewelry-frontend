@@ -5,12 +5,12 @@ import { useContext, useEffect, useState } from 'react';
 import { Context } from './Context';
 function Landing(props) {
   
-  const {getUser, data} = useContext(Context)
+  const {getUser, data, user} = useContext(Context)
   return (
     <div>
       <button onClick={getUser}>Get User</button>
       {
-        data ? <h1>Welcome back {data.username}</h1>: null
+        user ? <h1>Welcome back {user.username}</h1>: null
       }
       <Login />
       <SignUp /> 

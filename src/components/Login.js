@@ -6,13 +6,15 @@ import {useHistory} from 'react-router-dom'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
+import { getSuggestedQuery } from '@testing-library/dom';
 const eye = <FontAwesomeIcon icon={faEye} />;
 
 function Login(props) {
   let history = useHistory()
   const [passwordShown, setPasswordShown] = useState(false);
-  const {setLoggedIn} = useContext(Context)
 
+  const {getUser, user, setData} = useContext(Context)
+  console.log(user)
   async function loginUser (e) {
     e.preventDefault()
     await axios({
@@ -26,15 +28,15 @@ function Login(props) {
     })
     .then((res)=> {
       console.log(res)
+      // setData(res)
       if(res.data === 'No user Exists'){
         history.push('/')
       }
       else {
         history.push("/homepage")
       }
+      
     })
-    setLoggedIn(true)
-    
   }
   
   const togglePasswordVisiblity = () => {

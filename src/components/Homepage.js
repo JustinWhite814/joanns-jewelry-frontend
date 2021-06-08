@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react'
 import { Link, Redirect } from 'react-router-dom'
-function homepage(props) {
+import {useHistory} from 'react-router-dom'
+import { Context }  from './Context'
+function Homepage(props) {
+  const {loggedIn, setLoggedIn,user, setUser, data} = useContext(Context);
+  let history = useHistory()
+  const logOut = (e) => {
+    e.preventDefault()
+    history.push('/')
+    
+  }
+  if(user)  {
+    
+    console.log(user)
   return (
     <div>
+      <button onClick={logOut}>Logout</button>
       <Link to={'/rings'} ><button>rings</button></Link>
       <br />
       <Link to={'/chains'}><button>chains</button></Link>
@@ -14,5 +27,9 @@ function homepage(props) {
     </div>
   );
 }
+else 
+  return <h1>Please sign in</h1>
 
-export default homepage;
+}
+
+export default Homepage;
