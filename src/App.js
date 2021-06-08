@@ -32,6 +32,7 @@ function App() {
   useEffect(()=> {getJewels()},[])
   
   async function getUser (e) {
+    e.preventDefault()
     await axios({
     method: 'GET',
     withCredentials: true,
@@ -46,7 +47,7 @@ function App() {
       <Switch>
       <Context.Provider value={{data,baseURL, user, setUser, jewels, setJewels, getJewels, loggedIn, setLoggedIn, getUser}}>
       <Route exact path = '/' component={Landing}/>
-      <Route exact path = '/sidebar' component={SideBar}/>
+      <Route exact path = '/sidebar' component={SideBar}/> 
       <Route exact path ='/homepage' component={Homepage} />
       <Route exact path ='/bracelets' component={Bracelets}/>
       <Route exact path ='/chains' component={Chains}/>

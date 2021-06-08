@@ -5,6 +5,7 @@ import { Context } from './Context';
 
 function SignUp(props) {
   async function register (e) {
+    e.preventDefault()
     await axios({
     method: 'POST',
     data: {
@@ -17,7 +18,6 @@ function SignUp(props) {
     url: "http://localhost:4000/register"
     })
     .then((res)=> console.log(res))
-    // setLoggedIn(true)
   }
   
   return (
