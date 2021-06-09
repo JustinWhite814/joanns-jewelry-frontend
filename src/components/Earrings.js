@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Context } from './Context';
 import axios from 'axios';
+import '../styles/style.css'
+import Grid from '@material-ui/core/Grid'
 
-function Earrings(props) {
-  const {baseURL} = useContext(Context)
+export default function Earrings(props) {
+  const {baseURL, jewels} = useContext(Context)
   const [earrings, setEarrings] = useState([])
   const getEarrings = async () => {
   const url = `${baseURL}/earrings`
@@ -20,21 +22,20 @@ function Earrings(props) {
   useEffect(()=> {getEarrings()}, [])
   console.log(earrings)
   let sortedEarrings = [...earrings].reverse()
-  const earringsShow = sortedEarrings.map(earrings => {
-    return (
-      <div key={earrings._id}>
-        <h2>{earrings.title}</h2>
-        <h2>{earrings.price}</h2>
-        <img src={earrings.image} alt={earrings.title} />
-        <h2>{earrings.availability}</h2>
-      </div>
-    )
-  })
   return (
-    <div>
-      {earringsShow}
-    </div>
-  );
-}
+  <div>
+    <h1>Earrings</h1>
+      <Grid container>
+        {sortedEarrings.map(earring => (
+          <Grid item key={earring._id} xs ={12}  md={6} lg={4} className='bracelets'> 
+            <img src={earring.image} alt={earring.title} />
+            <p>{earring.title}</p>
+            <p>{earring.price}</p>
+            <p>{earring.availability}</p>
+          </Grid>
+        ))} 
+      </Grid> 
+  </div> 
+  )
+  }
 
-export default Earrings;

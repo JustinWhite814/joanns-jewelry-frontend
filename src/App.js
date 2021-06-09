@@ -11,6 +11,7 @@ import Bracelets from './components/Bracelet';
 import Rings from './components/Rings';
 import Chains from './components/Chains';
 import Earrings from './components/Earrings';
+import Header from './components/Navigation/Header'
 
 function App() {
   const baseURL = 'http://localhost:4000/jewels'
@@ -20,10 +21,21 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false)
   const [data, setData] = useState('')
   
+
+  const getJewels = async () => {
+  await axios.get(baseURL)
+  .then(res => {
+    setJewels(res.data)
+  }).catch(err => {
+    console.log('request failed')
+    console.log(err)
+  })
+  }  
     
+  useEffect(()=> getJewels(), [])
   return (
     <div className="App">
-     
+     <Header />
       <Switch>
       <Context.Provider value={{setData, setUser,user,baseURL, jewels, setJewels, loggedIn, setLoggedIn}}>
       <Route exact path = '/' component={Landing} />

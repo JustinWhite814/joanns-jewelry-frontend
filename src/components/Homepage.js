@@ -8,56 +8,44 @@ import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import '../styles/homepage.css';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import Header from './Navigation/Header'
 function Homepage(props) {
-  const {loggedIn, setLoggedIn,user, setUser, data} = useContext(Context);
-  let history = useHistory()
-  
-  const logOut = (e) => {
-    e.preventDefault()
-    history.push('/')
-    
-  }
+  const {user} = useContext(Context);
+  const {jewels} = useContext(Context)
   if(user)  {
-   return (
-    
-    <Container maxWidth='sm' > 
-    <Grid container>
-    <div>
-      {/* <button onClick={logOut}>Logout</button> */}
-      <Button
-       variant="contained" 
-       href="/rings">
-       Rings</Button>
+  console.log(jewels)
+  
+  function shuffle(sourceArray) {
+    for (let i = 0; i < sourceArray.length - 1; i++) {
+        let j = i + Math.floor(Math.random() * (sourceArray.length - i));
 
-      <br />
-
-      <Button
-       variant="contained" 
-       href='/chains'>
-       Chains
-      </Button>
-      
-      <br />
-      
-      <Button 
-        variant="contained"
-        href='/earrings'>
-        Earrings
-      </Button>
-      
-      <br />
-      
-      <Button
-       variant="contained"
-       href='/bracelets'>
-       Bracelets
-      </Button>
-      
-      <br />
-    </div>
-    </Grid>
-    </Container> 
-  );
+        const temp = sourceArray[j];
+        sourceArray[j] = sourceArray[i];
+        sourceArray[i] = temp;
+    }
+    return sourceArray
+  }
+  shuffle(jewels);
+  
+  return (
+  <div>
+    <Grid container >
+        {jewels.map(jewel => (
+          <Grid item key={jewel._id} xs ={12}  md={6} lg={4} > 
+            <img src={jewel.image} alt={jewel.title} />
+            <p>{jewel.title}</p>
+            <p>{jewel.price}</p>
+            <p>{jewel.availability}</p>
+       </Grid>
+        ))}
+   </Grid>
+   </div>
+  )
 }
 else 
   return <h1>Please sign in</h1>

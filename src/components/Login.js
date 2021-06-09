@@ -1,21 +1,15 @@
 import axios from 'axios';
-import React, {useContext, useState} from 'react';
-import { Redirect } from 'react-router-dom';
-import { Context } from './Context';
+import React, {useState} from 'react';
 import {useHistory} from 'react-router-dom'
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
-import { getSuggestedQuery } from '@testing-library/dom';
+
 const eye = <FontAwesomeIcon icon={faEye} />;
 
-function Login(props) {
+function Login() {
   let history = useHistory()
   const [passwordShown, setPasswordShown] = useState(false);
-
-  const {getUser, user, setData} = useContext(Context)
-  console.log(user)
-  async function loginUser (e) {
+    async function loginUser (e) {
     e.preventDefault()
     await axios({
     method: 'POST',
@@ -27,15 +21,12 @@ function Login(props) {
     url: "http://localhost:4000/login"
     })
     .then((res)=> {
-      console.log(res)
-      // setData(res)
       if(res.data === 'No user Exists'){
         history.push('/')
       }
       else {
         history.push("/homepage")
       }
-      
     })
   }
   
@@ -43,33 +34,23 @@ function Login(props) {
     setPasswordShown(passwordShown ? false : true);
   };
 
-
-
-
   return (
     <div className='col-md-6'>
     <h3 className='text-center'>Login</h3>
     <form onSubmit={loginUser} name='login'>
       <div className='form-group'>
-        <input type='text' className='form-control' name='username' placeholder='Enter your username' autoComplete='on' />
+        <input type='text' className='form-control' name='username' placeholder='Enter your username' autoComplete='on'/>
       </div>
       <div className='form-group'>
-        <label>Password <i onClick={togglePasswordVisiblity}>{eye}</i> </label>
-        <input type='text' placeholder='Enter your password' name='password' autoComplete='on' /> 
+        <label>Password <i onClick={togglePasswordVisiblity}>{eye}</i></label>
+        <input type={passwordShown ? 'text' : 'password'} placeholder='Enter your password' name='password' autoComplete='on' /> 
       </div>
       <div className="text-left form-group">
         <button type="submit" className="btn btn-lg buttons">Login</button> 
       </div>
-
     </form>
   </div>
-
-
-
-
-    
-
-  );
+  )
 }
 
 export default Login;

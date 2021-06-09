@@ -1,8 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Context } from './Context';
-import axios from 'axios';
+import React, { useContext, useEffect, useState } from 'react'
+import { Context } from './Context'
+import axios from 'axios'
+import Grid from '@material-ui/core/Grid'
 
-function Chains(props) {
+export default function Chains(props) {
   const {baseURL} = useContext(Context)
   const [chains, setChains] = useState([])
   const getChains = async () => {
@@ -20,21 +21,20 @@ function Chains(props) {
   useEffect(()=> {getChains()}, [])
   console.log(chains)
   let sortedChains = [...chains].reverse()
-  const chainsShow = sortedChains.map(chains => {
-    return (
-      <div key={chains._id}>
-        <h2>{chains.title}</h2>
-        <h2>{chains.price}</h2>
-        <img src={chains.image} alt={chains.title} />
-        <h2>{chains.availability}</h2>
-      </div>
-    )
-  })
   return (
-    <div>
-      {chainsShow}
-    </div>
-  );
-}
+  <div>
+    <h1>Chains</h1>
+      <Grid container>
+        {sortedChains.map(chain => (
+          <Grid item key={chain._id} xs ={12}  md={6} lg={4} className='container'> 
+            <img src={chain.image} alt={chains.title} />
+            <p>{chain.title}</p>
+            <p>{chain.price}</p>
+            <p>{chain.availability}</p>
+          </Grid>
+        ))} 
+    </Grid> 
+  </div> 
+  )
+  }
 
-export default Chains;
