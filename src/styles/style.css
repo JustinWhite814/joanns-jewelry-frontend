@@ -1,0 +1,9 @@
+body {
+  background-color: black;
+  color: white;
+}
+.container {
+  padding-top: 2rem;
+  background-image: linear-gradient(to right, grey, black);
+  border: 3px solid white;
+}

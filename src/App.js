@@ -26,7 +26,7 @@ function App() {
      
       <Switch>
       <Context.Provider value={{setData, setUser,user,baseURL, jewels, setJewels, loggedIn, setLoggedIn}}>
-      <Route exact path = '/' component={Landing}/>
+      <Route exact path = '/' component={Landing} />
       <Route exact path = '/sidebar' component={SideBar}/>
       <Route exact path ='/homepage' component={Homepage} />
       <Route exact path ='/bracelets' component={Bracelets}/>
