@@ -1,9 +1,8 @@
 import axios from 'axios';
-import React, { useContext, useState } from 'react';
-import { Redirect } from 'react-router';
-import { Context } from './Context';
+import React from 'react';
 
-function SignUp(props) {
+
+function SignUp() {
   async function register (e) {
     e.preventDefault()
     await axios({
@@ -21,25 +20,28 @@ function SignUp(props) {
   }
   
   return (
-    <div className='col-md-6 border-right border-danger'>
+    <div className='col-md-6 signUp'>
       <h3 className='text-center'>Sign Up</h3>
       <form onSubmit={register} name='signup'>
         <div className='form-group row'>
             <div className='col'>
-              <input type='text' name='firstname' placeholder='First name' autoComplete='on' />
+              <input type='text' className='form-control' name='firstname' placeholder='First name' autoComplete='on' />
             </div>
             <div className='col'>
-              <input type='text' name='lastname' placeholder='Last name' autoComplete='on' />
+              <input type='text' className='form-control' name='lastname' placeholder='Last name' autoComplete='on' />
             </div>
         </div>
-        <div className='form-group'>
-          <input type='text' name='username' placeholder='Choose your username' autoComplete='on' />
+
+        <div className='row form-group'>
+        <div className='col'>
+          <input type='text' className='form-control' name='username' placeholder='Choose your username' autoComplete='on' />
         </div>
-        <div className='form-group'>
-          <input type='password' name='password' placeholder='Password' autoComplete='on' />
+        <div className='col'>
+          <input type='password' className='form-control' name='password' placeholder='Password' autoComplete='on' />
         </div>
-        <div className="text-left form-group">
-          <button type="submit" >Sign Up</button>
+        </div>
+        <div className="text-center form-group buttons" >
+          <button type="submit" className='btn btn-light' >Sign Up</button>
         </div>
       </form>
     </div>

@@ -1,0 +1,15 @@
+.jumbotron {
+  background-color: black;
+  padding-top: 50px
+}
+body{
+  background: black;
+}
+.container {
+  padding-top: 2rem;
+  background-color: white;
+  color: black;
+}
+.buttons {
+  padding-top: 10px;
+}

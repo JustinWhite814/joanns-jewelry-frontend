@@ -19,11 +19,12 @@ export default function Bracelets(props) {
   }  
   
   useEffect(()=> {getBracelets()}, [])
-  console.log(bracelets)
+  
   let sortedBracelets = [...bracelets].reverse()
   return (
   <div>
-    <h1>Bracelets</h1>
+    <div className='jumbotron'>
+    <h1>Bracelets</h1></div>
       <Grid container>
         {sortedBracelets.map(bracelets => (
           <Grid item key={bracelets._id} xs ={12}  md={6} lg={4} className='bracelets'> 

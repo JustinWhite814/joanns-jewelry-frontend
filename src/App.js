@@ -3,8 +3,7 @@ import './App.css';
 import React, {useState, useEffect} from 'react'
 import {Route, Switch} from 'react-router-dom'
 import { Context } from './components/Context'
-import Landing from './components/Landing'
-import SideBar from './components/Sidebar'
+import Authenticate from './components/Authenticate'
 import Homepage from './components/Homepage'
 import axios from 'axios';
 import Bracelets from './components/Bracelet';
@@ -19,8 +18,6 @@ function App() {
   const [admin, setAdmin] = useState({})
   const [jewels, setJewels] = useState([])
   const [loggedIn, setLoggedIn] = useState(false)
-  const [data, setData] = useState('')
-  
 
   const getJewels = async () => {
   await axios.get(baseURL)
@@ -37,10 +34,9 @@ function App() {
     <div className="App">
      <Header />
       <Switch>
-      <Context.Provider value={{setData, setUser,user,baseURL, jewels, setJewels, loggedIn, setLoggedIn}}>
-      <Route exact path = '/' component={Landing} />
-      <Route exact path = '/sidebar' component={SideBar}/>
-      <Route exact path ='/homepage' component={Homepage} />
+      <Context.Provider value={{setUser,user,baseURL, jewels, setJewels, loggedIn, setLoggedIn}}>
+      <Route exact path ='/' component={Homepage} />
+      <Route exact path = '/authenticate' component={Authenticate} />
       <Route exact path ='/bracelets' component={Bracelets}/>
       <Route exact path ='/chains' component={Chains}/>
       <Route exact path ='/earrings' component={Earrings}/>

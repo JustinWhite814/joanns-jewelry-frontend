@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Context } from './Context';
 import axios from 'axios';
 import Grid from '@material-ui/core/Grid'
+import '../styles/style.css'
 
 export default function Rings(props) {
   const {baseURL} = useContext(Context)
@@ -10,7 +11,6 @@ export default function Rings(props) {
   const url = `${baseURL}/rings`
   await axios.get(url)
   .then(res => {
-    console.log(res.data)
     setRings(res.data)
   }).catch(err => {
     console.log('request failed')
@@ -19,14 +19,15 @@ export default function Rings(props) {
   }  
   
   useEffect(()=> {getRings()}, [])
-  console.log(rings)
   let sortedRings = [...rings].reverse()
   return (
   <div>
+    <div className='jumbotron'>
     <h1>Rings</h1>
+    </div>
       <Grid container>
         {sortedRings.map(ring => (
-          <Grid item key={ring._id} xs ={12}  md={6} lg={4} className='bracelets'> 
+          <Grid item key={ring._id} xs ={12}  md={6} lg={4} className='rings'> 
             <img src={ring.image} alt={ring.title} />
             <p>{ring.title}</p>
             <p>{ring.price}</p>
