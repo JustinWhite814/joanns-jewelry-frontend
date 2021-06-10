@@ -28,13 +28,19 @@ function App() {
     console.log(err)
   })
   }  
+  
+  async function updateJewel (jewelId, newContent) {
+    const url = `${baseURL}/posts/${jewelId}`
+    const updatedJewels = await axios.put(url, newContent)
+    setJewels(updatedJewels.data)
+  }
     
   useEffect(()=> getJewels(), [])
   return (
     <div className="App">
      <Header />
       <Switch>
-      <Context.Provider value={{setUser,user,baseURL, jewels, setJewels, loggedIn, setLoggedIn}}>
+      <Context.Provider value={{setUser,user,baseURL, jewels, setJewels, loggedIn, setLoggedIn, updateJewel}}>
       <Route exact path ='/' component={Homepage} />
       <Route exact path = '/authenticate' component={Authenticate} />
       <Route exact path ='/bracelets' component={Bracelets}/>

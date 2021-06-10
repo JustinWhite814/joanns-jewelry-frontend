@@ -1,12 +1,15 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Context }  from './Context'
 import Grid from '@material-ui/core/Grid'
 import '../styles/homepage.css';
 import Bootstrap from 'bootstrap/dist/css/bootstrap.css'
 
+
 function Homepage() {
   const {user} = useContext(Context);
   const {jewels} = useContext(Context)
+  
+
   if(user)  {
   function shuffle(sourceArray) {
     for (let i = 0; i < sourceArray.length - 1; i++) {
@@ -18,7 +21,9 @@ function Homepage() {
     }
     return sourceArray
   }
+ 
   shuffle(jewels);
+  console.log(user)
   return (
   <div>
     <div className="jumbotron">

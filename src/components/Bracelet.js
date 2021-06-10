@@ -32,6 +32,7 @@ export default function Bracelets(props) {
             <p>{bracelets.title}</p>
             <p>{bracelets.price}</p>
             <p>{bracelets.availability}</p>
+            <button>Add to Cart</button>
           </Grid>
         ))} 
       </Grid> 

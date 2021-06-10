@@ -3,6 +3,7 @@ import Login from './Login'
 import SignUp from './SignUp'
 import '../styles/landing.css'
 import Bootstrap from 'bootstrap/dist/css/bootstrap.css'
+import EditProfile from './EditProfile';
 function Authenticate() {
   
   return (
@@ -12,6 +13,7 @@ function Authenticate() {
       <div className='row align-items-center'>
       <Login />
       <SignUp /> 
+      <EditProfile />
       </div>
       </div>
   </div>
