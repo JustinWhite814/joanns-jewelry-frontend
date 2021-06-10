@@ -23,16 +23,18 @@ function EditProfile(props) {
    <>
     <h2>Edit Profile</h2>
     <form onSubmit={editUser}>
-    <div className='form-group'>
+    <div className='form-group row'>
+      <div className='col'>
       <input className="form-control" type='text' name='firstName' defaultValue={user.firstName} placeholder='First name'/>
-    </div>
-    <div className='form-group'>
+      </div>
+    <div className='col'>
       <input className="form-control" type='text' name='username' defaultValue={user.username} placeholder='username'/>   
     </div>
-    <div className='form-group'>
+    <div className='col'>
       <input className="form-control" type='text' name='password' defaultValue={user.password} placeholder='Password'/>
     </div>
-    <div className='form-group'>
+    </div>
+    <div className='form-group buttons' >
      <button className="btn btn-light" type='submit'>Update Profile Info</button>
     </div>
     </form>
