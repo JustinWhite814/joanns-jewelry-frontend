@@ -1,0 +1,20 @@
+.jumbotron {
+  padding-bottom: 50px;
+}
+body {
+  background-color: white;
+  /* background-image: linear-gradient(to left, rgb(126, 22, 22), black); */
+    /* background-image: linear-gradient( to right, black, rgb(126, 22, 22), black); */
+}
+h1 {
+  text-align: center;
+  font-size: 40px;
+  color: white;
+}
+.jewels {
+  padding-top: 2rem;
+  background-image: linear-gradient( to right, black, rgb(126, 22, 22), black);
+  /* background-image: linear-gradient(to right, grey, black); */
+  border: 3px solid white;
+
+}

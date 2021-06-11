@@ -1,0 +1,16 @@
+body {
+  background-image: linear-gradient( to right, black, rgb(126, 22, 22), black);
+}
+.jumbotron {
+  background-color: black;
+  padding-top: 50px
+}
+
+.buttons {
+  padding-top: 10px;
+
+}
+
+.signUp {
+  padding-top: 10px;
+}

@@ -1,0 +1,25 @@
+body {
+  background-color: black;
+  color: white;
+}
+.bracelets {
+  padding-top: 2rem;
+  background-image: linear-gradient(to right,black, rgb(5, 188, 42), black);
+  border: 3px solid white;
+}
+.rings {
+  padding-top: 2rem;
+  background-image: linear-gradient(to right,black, grey, black);
+  border: 3px solid white;
+}
+
+.chains {
+  padding-top: 2rem;
+  background-image: linear-gradient( to right, black, rgb(203, 0, 162), black);
+  border: 3px solid white;
+}
+.earrings {
+  padding-top: 2rem;
+  background-image: linear-gradient(to right,black, rgb(72, 114, 198), black);
+  border: 3px solid white;
+}
