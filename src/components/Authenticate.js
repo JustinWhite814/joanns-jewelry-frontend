@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Login from './Login'
 import SignUp from './SignUp'
 import '../styles/landing.css'
 import Bootstrap from 'bootstrap/dist/css/bootstrap.css'
+import EditProfile from './EditProfile';
+import { Context } from './Context';
 function Authenticate() {
-  
+  const {user} = useContext(Context)
   return (
     <>
     <div className='jumbotron'>
       <div className="container">
       <div className='row align-items-center'>
       <Login />
-      <SignUp /> 
+      <SignUp />
+      <EditProfile />
       </div>
       </div>
   </div>
