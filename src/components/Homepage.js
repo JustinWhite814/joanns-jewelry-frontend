@@ -10,7 +10,7 @@ function Homepage() {
   const {jewels} = useContext(Context)
   
 
-  if(user)  {
+  
   function shuffle(sourceArray) {
     for (let i = 0; i < sourceArray.length - 1; i++) {
         let j = i + Math.floor(Math.random() * (sourceArray.length - i));
@@ -44,9 +44,8 @@ function Homepage() {
         ))}
    </Grid>
   </div>
-  )}
-else 
-  return <h1>Please sign in</h1>
+  )
+
 
 }
 
