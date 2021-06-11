@@ -36,7 +36,7 @@ function Login() {
         history.push('/authenticate')
       }
       else {
-        // history.push("/")
+        history.push("/")
         const username = e.target.username.value
         fetchUserInfo(username)
       }

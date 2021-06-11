@@ -11,6 +11,7 @@ import Rings from './components/Rings';
 import Chains from './components/Chains';
 import Earrings from './components/Earrings';
 import Header from './components/Navigation/Header'
+import Cart from './components/Cart'
 
 function App() {
   const baseURL = 'http://localhost:4000/jewels'
@@ -18,6 +19,28 @@ function App() {
   const [admin, setAdmin] = useState({})
   const [jewels, setJewels] = useState([])
   const [loggedIn, setLoggedIn] = useState(false)
+  const [cartItems, setCartItems] = useState([])
+
+  const onAdd = (product) => {
+    const exist = cartItems.find(x => x.id === product.id);
+    if(exist){
+      setCartItems(cartItems.map(x => x.id === product.id ? {...exist, qty: exist.qty + 1 }: x 
+        )
+      )
+    } else {
+      setCartItems([...cartItems, {...product, qty: 1}])
+    }
+  }
+  const onRemove = (product) => {
+    const exist = cartItems.find((x)=> x.id === product.id);
+    if(exist.qty === 1){
+      setCartItems(cartItems.filter((x)=> x.id !== product.id))
+    } else {
+      setCartItems(cartItems.map(x => x.id === product.id ? {...exist, qty: exist.qty - 1 }: x 
+        )
+      )
+    }
+  }
 
   const getJewels = async () => {
   await axios.get(baseURL)
@@ -40,8 +63,9 @@ function App() {
     <div className="App">
      <Header />
       <Switch>
-      <Context.Provider value={{setUser,user,baseURL, jewels, setJewels, loggedIn, setLoggedIn, updateJewel}}>
+      <Context.Provider value={{onRemove, onAdd,cartItems, setCartItems,setUser,user,baseURL, jewels, setJewels, loggedIn, setLoggedIn, updateJewel}}>
       <Route exact path ='/' component={Homepage} />
+      <Route exact path ='/cart' component={Cart} />
       <Route exact path = '/authenticate' component={Authenticate} />
       <Route exact path ='/bracelets' component={Bracelets}/>
       <Route exact path ='/chains' component={Chains}/>

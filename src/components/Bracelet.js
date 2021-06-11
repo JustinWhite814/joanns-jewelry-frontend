@@ -5,7 +5,7 @@ import '../styles/style.css'
 import Grid from '@material-ui/core/Grid'
 
 export default function Bracelets(props) {
-  const {baseURL} = useContext(Context)
+  const {baseURL, onAdd} = useContext(Context)
   const [bracelets, setBracelets] = useState([])
   const getBracelets = async () => {
   const url = `${baseURL}/bracelets`
@@ -32,7 +32,7 @@ export default function Bracelets(props) {
             <p>{bracelets.title}</p>
             <p>{bracelets.price}</p>
             <p>{bracelets.availability}</p>
-            <button>Add to Cart</button>
+            <button onClick={()=> onAdd(bracelets)}>Add to Cart</button>
           </Grid>
         ))} 
       </Grid> 

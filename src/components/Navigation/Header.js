@@ -77,6 +77,7 @@ const Header = (props) =>  {
                       <MenuItem onClick={()=> handleMenuClick('chains')}>Chains</MenuItem>
                       <MenuItem onClick={()=> handleMenuClick('/rings')}>Rings</MenuItem>
                       <MenuItem onClick={()=> handleMenuClick('/authenticate')}>Register/Login</MenuItem>
+                      <MenuItem onClick={()=> handleMenuClick('/cart')}>Cart</MenuItem>
                     </Menu>
         </Toolbar>
       </AppBar>

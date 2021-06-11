@@ -1,8 +1,9 @@
 import axios from 'axios';
 import React from 'react';
-
+import { useHistory } from 'react-router-dom'
 
 function SignUp() {
+  let history = useHistory()
   async function register (e) {
     e.preventDefault()
     await axios({
@@ -16,7 +17,10 @@ function SignUp() {
     withCredentials: true,
     url: "http://localhost:4000/register"
     })
-    .then((res)=> console.log(res))
+    .then(
+      (res)=> { console.log(res)
+      history.push('/')
+      })
   }
   
   return (
