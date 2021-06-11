@@ -14,7 +14,7 @@ function Login() {
   const [passwordShown, setPasswordShown] = useState(false);
 
   async function fetchUserInfo(username) {
-    const url = `http://localhost:4000/user/${username}`
+    const url = `https://joansjewelrybackend.herokuapp.com/user/${username}`
     await axios.get(url)
     .then(res => setUser(res.data))
   }
@@ -28,7 +28,7 @@ function Login() {
       password: e.target.password.value
     },
     withCredentials: true,
-    url: "http://localhost:4000/login"
+    url: "https://joansjewelrybackend.herokuapp.com/login"
     })
     .then((res)=> {
       if(res.data === 'No user Exists'){

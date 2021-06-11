@@ -14,7 +14,7 @@ import Header from './components/Navigation/Header'
 import Cart from './components/Cart'
 
 function App() {
-  const baseURL = 'http://localhost:4000/jewels'
+  const baseURL = 'https://joansjewelrybackend.herokuapp.com/jewels'
   const [user, setUser] = useState({})
   const [admin, setAdmin] = useState({})
   const [jewels, setJewels] = useState([])
