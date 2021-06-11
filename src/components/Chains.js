@@ -28,7 +28,7 @@ export default function Chains(props) {
           <Grid item key={chain._id} xs ={12}  md={6} lg={4} className='chains'> 
             <img src={chain.image} alt={chains.title} />
             <p>{chain.title}</p>
-            <p>{chain.price}</p>
+            <p>${chain.price}</p>
             <p>{chain.availability}</p>
           </Grid>
         ))} 

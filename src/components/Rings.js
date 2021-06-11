@@ -30,7 +30,7 @@ export default function Rings(props) {
           <Grid item key={ring._id} xs ={12}  md={6} lg={4} className='rings'> 
             <img src={ring.image} alt={ring.title} />
             <p>{ring.title}</p>
-            <p>{ring.price}</p>
+            <p>${ring.price}</p>
             <p>{ring.availability}</p>
           </Grid>
         ))} 

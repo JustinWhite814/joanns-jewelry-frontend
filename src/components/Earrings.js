@@ -31,7 +31,7 @@ export default function Earrings(props) {
           <Grid item key={earring._id} xs ={12}  md={6} lg={4} className='earrings'> 
             <img src={earring.image} alt={earring.title} />
             <p>{earring.title}</p>
-            <p>{earring.price}</p>
+            <p>${earring.price}</p>
             <p>{earring.availability}</p>
           </Grid>
         ))} 

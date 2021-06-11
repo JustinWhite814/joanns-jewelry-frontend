@@ -30,9 +30,9 @@ export default function Bracelets(props) {
           <Grid item key={bracelets._id} xs ={12}  md={6} lg={4} className='bracelets'> 
             <img src={bracelets.image} alt={bracelets.title} />
             <p>{bracelets.title}</p>
-            <p>{bracelets.price}</p>
+            <p>${bracelets.price}</p>
             <p>{bracelets.availability}</p>
-            <button onClick={()=> onAdd(bracelets)}>Add to Cart</button>
+            {/* <button onClick={()=> onAdd(bracelets)}>Add to Cart</button> */}
           </Grid>
         ))} 
       </Grid> 
