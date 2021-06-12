@@ -15,10 +15,12 @@ function SignUp() {
       password: e.target.password.value
     },
     withCredentials: true,
-    url: "https://joansjewelrybackend.herokuapp.com/register"
+    // url: "https://joansjewelrybackend.herokuapp.com/register"
+    url: "http://localhost:4000/register"
     })
     .then(
       (res)=> { console.log(res)
+      alert("Welcome Back")
       history.push('/')
       })
   }

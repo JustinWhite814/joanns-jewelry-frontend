@@ -20,10 +20,10 @@ function EditProfile(props) {
   }
   console.log(user)
   return (
-   <>
+      <div className='col-md-6'>
     <h2>Edit Profile</h2>
     <form onSubmit={editUser}>
-    <div className='form-group row'>
+    <div className='row form-group' >
       <div className='col'>
       <input className="form-control" type='text' name='firstName' defaultValue={user.firstName} placeholder='First name'/>
       </div>
@@ -38,7 +38,8 @@ function EditProfile(props) {
      <button className="btn btn-light" type='submit'>Update Profile Info</button>
     </div>
     </form>
-    </>
+    </div>
+
   );
 }
 

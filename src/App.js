@@ -14,7 +14,8 @@ import Header from './components/Navigation/Header'
 import Cart from './components/Cart'
 
 function App() {
-  const baseURL = 'https://joansjewelrybackend.herokuapp.com/jewels'
+  // const baseURL = 'https://joansjewelrybackend.herokuapp.com/jewels'
+  const baseURL = 'http://localhost:4000/jewels'
   const [user, setUser] = useState({})
   const [admin, setAdmin] = useState({})
   const [jewels, setJewels] = useState([])
@@ -53,7 +54,7 @@ function App() {
   }  
   
   async function updateJewel (jewelId, newContent) {
-    const url = `${baseURL}/posts/${jewelId}`
+    const url = `${baseURL}/jewels/${jewelId}`
     const updatedJewels = await axios.put(url, newContent)
     setJewels(updatedJewels.data)
   }

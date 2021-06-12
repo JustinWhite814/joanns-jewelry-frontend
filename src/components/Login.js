@@ -14,7 +14,8 @@ function Login() {
   const [passwordShown, setPasswordShown] = useState(false);
 
   async function fetchUserInfo(username) {
-    const url = `https://joansjewelrybackend.herokuapp.com/user/${username}`
+    const url = `http://localhost:4000/user/${username}`
+    // const url = `https://joansjewelrybackend.herokuapp.com/user/${username}`
     await axios.get(url)
     .then(res => setUser(res.data))
   }
@@ -28,11 +29,13 @@ function Login() {
       password: e.target.password.value
     },
     withCredentials: true,
-    url: "https://joansjewelrybackend.herokuapp.com/login"
+    // url: "https://joansjewelrybackend.herokuapp.com/login"
+    url: "http://localhost:4000/login"
     })
     .then((res)=> {
       if(res.data === 'No user Exists'){
         console.log(res.data)
+        alert("Sorry but that User doesn't exist")
         history.push('/authenticate')
       }
       else {

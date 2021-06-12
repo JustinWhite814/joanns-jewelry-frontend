@@ -38,7 +38,7 @@ function Homepage() {
           <Grid item key={jewel._id} xs ={12}  md={6} lg={4} className='jewels'> 
             <img src={jewel.image} alt={jewel.title} />
             <p>{jewel.title}</p>
-            <p>{jewel.price}</p>
+            <p>${jewel.price}</p>
             <p>{jewel.availability}</p>
        </Grid>
         ))}
