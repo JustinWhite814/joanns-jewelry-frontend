@@ -23,3 +23,19 @@ body {
   background-image: linear-gradient(to right,black, rgb(72, 114, 198), black);
   border: 3px solid white;
 }
+
+.loginForm {
+  padding: 20px;
+  color:white;
+}
+.signUpForm {
+  padding: 40px;
+  background-color: black;
+}
+.updateForm {
+  padding: 40px;
+}
+.inquiryForm {
+  padding: 50px;
+  background-color: black;
+}
