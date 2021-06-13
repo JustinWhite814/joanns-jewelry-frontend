@@ -5,29 +5,23 @@ import '../styles/homepage.css';
 import Bootstrap from 'bootstrap/dist/css/bootstrap.css'
 
 
-function Homepage() {
-  const {user} = useContext(Context);
+const Homepage = () => {
   const {jewels} = useContext(Context)
-  
-
-  
-  function shuffle(sourceArray) {
-    for (let i = 0; i < sourceArray.length - 1; i++) {
-        let j = i + Math.floor(Math.random() * (sourceArray.length - i));
-
-        const temp = sourceArray[j];
-        sourceArray[j] = sourceArray[i];
-        sourceArray[i] = temp;
+  const shuffle = (array) => {
+    for (let i = 0; i < array.length - 1; i++) {
+        let j = i + Math.floor(Math.random() * (array.length - i));
+        const tempArray = array[j];
+        array[j] = array[i];
+        array[i] = tempArray;
     }
-    return sourceArray
+    return array
   }
  
   shuffle(jewels);
-  console.log(user)
+
   return (
   <div>
     <div className="jumbotron">
-  
     <h2>Joan's 5th Avenue Inc.</h2>
     <h3>Gold - Diamonds - Watches</h3>
     <h4>A Brooklyn Family Owned Business</h4>
@@ -45,8 +39,6 @@ function Homepage() {
    </Grid>
   </div>
   )
-
-
 }
 
 export default Homepage;

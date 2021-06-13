@@ -28,16 +28,15 @@ const Header = (props) =>  {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+  
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
+  
   const handleMenuClick = (pageURL) => {
     history.push(pageURL)
     setAnchorEl(null);
   };
-  const handleButtonClick = (pageURL) => {
-    history.push(pageURL)
-  }
 
   return (
     <div className={classes.root} >
@@ -72,11 +71,12 @@ const Header = (props) =>  {
                       onClose={()=> setAnchorEl(null)}
                     >
                       <MenuItem onClick={()=> handleMenuClick('/')}>Home</MenuItem>
+                      <MenuItem onClick={()=> handleMenuClick('/about')}>About</MenuItem>
                       <MenuItem onClick={()=> handleMenuClick('/earrings')}>Earrings</MenuItem>
                       <MenuItem onClick={()=> handleMenuClick('/bracelets')}>Bracelets</MenuItem>
                       <MenuItem onClick={()=> handleMenuClick('chains')}>Chains</MenuItem>
                       <MenuItem onClick={()=> handleMenuClick('/rings')}>Rings</MenuItem>
-                      <MenuItem onClick={()=> handleMenuClick('/authenticate')}>Register/Login</MenuItem>
+                      <MenuItem onClick={()=> handleMenuClick('/registration')}>Register/Login</MenuItem>
                       <MenuItem onClick={()=> handleMenuClick('/cart')}>Cart</MenuItem>
                     </Menu>
         </Toolbar>

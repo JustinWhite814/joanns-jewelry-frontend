@@ -1,13 +1,12 @@
-import React, { useContext, useState } from 'react';
-import {Context} from './Context'
+import React, { useContext } from 'react';
+import {Context} from '../Context'
 
-function Cart(props) {
+const Cart = () => {
   const {cartItems, onAdd, onRemove} = useContext(Context)
 
   return (
-
     <div>
-      <h2>{cartItems.length === 0 && <div>Cart Is empty</div>}</h2>
+      <h2>{cartItems.length === 0 && <div>Coming Soon...</div>}</h2>
       {cartItems.map((item)=> (
         <div key={item.id} className='row'>
           <div>{item.price}</div>
