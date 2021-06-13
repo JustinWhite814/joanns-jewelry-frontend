@@ -43,3 +43,11 @@ body {
   background-color: black;
 }
 p:hover {color: black}
+
+.gallery {
+  float: left;
+  width:  500px;
+  height: 500px;
+  object-fit: cover;
+  padding: 10px;
+}
