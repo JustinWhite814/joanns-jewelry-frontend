@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { Context }  from './Context'
 import Grid from '@material-ui/core/Grid'
-import '../styles/homepage.css';
+import './styles/homepage.css';
 import Bootstrap from 'bootstrap/dist/css/bootstrap.css'
 
 

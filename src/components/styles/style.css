@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500&display=swap');
+
 body {
+  font-family: 'Barlow Semi Condensed', sans-serif;
   background-color: black;
   color: white;
 }
@@ -39,3 +42,4 @@ body {
   padding: 50px;
   background-color: black;
 }
+p:hover {color: black}
