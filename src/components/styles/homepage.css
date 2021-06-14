@@ -1,9 +1,14 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500&display=swap');
+
+body {
+  background-color: white;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
 .jumbotron {
   padding-bottom: 50px;
 }
-body {
-  background-color: white;
-}
+
 h1 {
   text-align: center;
   font-size: 40px;

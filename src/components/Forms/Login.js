@@ -40,6 +40,7 @@ const Login = () => {
       else {
         const username = e.target.username.value
         history.push("/")
+        alert('Welcome back')
         fetchUserInfo(username)
       }
     })

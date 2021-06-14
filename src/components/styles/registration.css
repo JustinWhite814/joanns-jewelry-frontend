@@ -1,4 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500&display=swap');
+
+
+
 body {
+  font-family: 'Barlow Semi Condensed', sans-serif;
   background-image: linear-gradient( to right, black, rgb(126, 22, 22), black);
 }
 .jumbotron {
