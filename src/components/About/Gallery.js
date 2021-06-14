@@ -36,7 +36,6 @@ const Gallery = (props) => {
           <img className = 'gallery' src={heartRings} alt="heart ring"/>
           <img className = 'gallery' src={neckLace} alt="necklace"/>
           <img className = 'gallery' src={newWindow} alt="new window"/>
-
       </Grid>
       </Grid>
     </div>

@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# [Joans-Jewelry](https://joans-jewelry.herokuapp.com/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+>Welcome to Joan's Jewelry!! Currently we are in the testing phase for a fully functioning e-commerce store! At the moment we have our user authentication running as well as rendering our products on site. We also have a form that let's you contact us directly via FormSpree!! Hopefully you can enjoy it all!
 
-In the project directory, you can run:
+- [Frontend Repo](https://github.com/JustinWhite814/joanns-jewelry-frontend)
+- [Backend Repo](https://github.com/JustinWhite814/JoannsJewelryBackend)
 
-### `npm start`
+## Installation Instructions
+* First, fork and clone the repo
+* Next, `npm i` to install required packages
+* Then lastly, open up the files in your code editor
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+Git clone [your https url goes here]
+cd joans-jewelry-frontend
+npm i
+npm start
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Screen Shots
+#### About Us
+![AboutMe](https://media.git.generalassemb.ly/user/33619/files/33c13380-cca2-11eb-8d90-e339a5ada74b)
 
-### `npm test`
+#### HomePage
+![Jewels](https://media.git.generalassemb.ly/user/33619/files/4b98b780-cca2-11eb-9239-a1d0f7e422b3)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Registration Page
+![RegistrationPage](https://media.git.generalassemb.ly/user/33619/files/78e56580-cca2-11eb-8f69-12f6cf7809c0)
 
-### `npm run build`
+#### Extra Content
+![Chains](https://media.git.generalassemb.ly/user/33619/files/8864ae80-cca2-11eb-8c75-c522e291b08a)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Team Members
+- [Justin White](https://github.com/JustinWhite814)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Project Planing
+Checkout the planning directory of this repo to view original wireframes and component hierarchy
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Minimum Viable Product
+* Linking two different applications of different stacks together
+* Sign-Up/Sign-In
+* Submit Inquiries about anything you see
+* Verify users exist with proper credentials and password security
+* Display data that is visually appealing
 
-### `npm run eject`
+## User StoriesAs a user I want to see the products
+As a user I want to sign up
+As a user I want to see prices for things that will be bought
+As a user I want to send inquiries about jewelry and get useful information
+As a user I want to eventually buy things
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Strech Goals
+- Implement Cart Functionality
+- Add full E-commerce functionality
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Technologies Used
+* React
+* JavaScript
+* Node.js
+* Express
+* HTML
+* CSS
+* PassportJs
+* Material-Ui
+* Bootstrap
+* MongoDB
+* Heroku
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Resources Used
+* https://w3schools.com/
+* https://stackoverflow.com
+* https://www.tutorialspoint.com/css/css_animation_fade_in.htm
+* https://fontawesome.com/
