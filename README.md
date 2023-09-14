@@ -1,11 +1,8 @@
-# [Joans-Jewelry](https://joans-jewelry.herokuapp.com/)
-
+# Joans-Jewelry
 ## Description
 
->Welcome to Joan's Jewelry!! Currently we are in the testing phase for a fully functioning e-commerce store! At the moment we have our user authentication running as well as rendering our products on site. We also have a form that let's you contact us directly via FormSpree!! Hopefully you can enjoy it all!
+>Welcome to Joan's Jewelry!! Currently we are in the testing phase for a fully functioning e-commerce store! At the moment we have our user authentication running as well as rendering our products on site. We also have a form that let's you contact us directly via FormSpree!! Hopefully you can enjoy it all! (Site is currently down due to heroku changes and configuration. Will soon be deploying to netlify)
 
-- [Frontend Repo](https://github.com/JustinWhite814/joanns-jewelry-frontend)
-- [Backend Repo](https://github.com/JustinWhite814/JoannsJewelryBackend)
 
 ## Installation Instructions
 * First, fork and clone the repo
